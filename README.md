@@ -1,3 +1,82 @@
+# Outershield SME SOC Framework
+
+**Developed by Outershield Security LLC | Albuquerque, New Mexico**
+
+A lightweight, open-source Security Operations Center (SOC) 
+automation framework specifically architected for small and 
+medium-sized enterprises (SMEs) and resource-constrained 
+critical infrastructure operators.
+
+---
+
+## The Problem
+
+Small and medium-sized enterprises represent the majority of 
+U.S. critical infrastructure operators — rural hospitals, 
+municipal utilities, regional financial institutions, and 
+small manufacturers. These organizations face the same 
+adversaries as Fortune 500 companies but operate without 
+dedicated security teams, enterprise budgets, or threat 
+intelligence capabilities.
+
+Current SOC automation solutions assume:
+- A dedicated security operations team
+- Enterprise-grade hardware and cloud budgets
+- Specialized security engineering expertise
+
+**None of these assumptions hold for SMEs.**
+
+The result is a structural security gap that nation-state 
+actors, ransomware groups, and opportunistic threat actors 
+actively exploit. Congressional testimony before the House 
+Subcommittee on Cybersecurity and Infrastructure Protection 
+(March 2023) identified this gap as one of the most 
+consequential vulnerabilities facing American critical 
+infrastructure.
+
+---
+
+## The Solution
+
+The Outershield SME SOC Framework adapts proven enterprise 
+SOC automation architecture into a deployment model 
+optimized for organizations with:
+
+- Limited or no dedicated security staff
+- Constrained IT budgets
+- No existing SIEM or EDR infrastructure
+- Minimal security engineering expertise
+
+This framework enables a single IT generalist to operate 
+security monitoring and incident response capabilities that 
+would otherwise require a full SOC team.
+
+---
+
+## Architecture
+┌─────────────────────────────────────────────────────┐
+│                   Detection Layer                    │
+│                  Wazuh (Open Source)                 │
+│         Log aggregation · Alert generation           │
+│              Endpoint + network telemetry            │
+└─────────────────────┬───────────────────────────────┘
+│
+▼
+┌─────────────────────────────────────────────────────┐
+│                Orchestration Layer                   │
+│                 n8n (Self-hosted)                    │
+│        Workflow automation · API integrations        │
+│           Alert enrichment · Routing logic           │
+└─────────────────────┬───────────────────────────────┘
+│
+▼
+┌─────────────────────────────────────────────────────┐
+│              Case Management Layer                   │
+│             TheHive (Open Source)                    │
+│      Incident tracking · CIRCIA-ready documentation │
+│         Response playbooks · Audit trail             │
+└─────────────────────────────────────────────────────┘
+
 **Core Stack:**
 - **Wazuh** — open-source SIEM and XDR for detection
 - **n8n** — self-hosted workflow orchestration
