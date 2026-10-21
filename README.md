@@ -97,6 +97,8 @@ would otherwise require a full SOC team.
 ### 🔴 Module 1 — CVE Intelligence Notifications
 *Status: Active Development*
 
+📁 **Code:** [`modules/cve-intelligence/`](modules/cve-intelligence/) — n8n workflow, sector playbooks, standalone Python fetcher, and setup guide
+
 Automated vulnerability notification system that pulls 
 daily from the CISA Known Exploited Vulnerabilities (KEV) 
 catalog and NIST NVD API, filters by the organization's 
